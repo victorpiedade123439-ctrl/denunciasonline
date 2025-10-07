@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>denúncias.gov.com.br — denúncias Belém e Açores</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header" id="header">
+    <div class="container header-inner">
+      <a class="brand" href="#home">
+        <span class="brand-main">denúncias</span>
+        <span class="brand-accent">Belém &amp; Açores</span>
+      </a>
+
+      <button id="menuToggle" class="menu-toggle" aria-label="Abrir menu">☰</button>
+
+      <nav id="nav" class="nav">
+        <a href="#home">Início</a>
+        <a href="#denuncias">Denúncias</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#noticias">Notícias</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero / Banner -->
+    <section id="home" class="hero">
+      <div class="container hero-inner">
+        <div class="hero-left">
+          <h1>Canal de Denúncias — Belém &amp; Açores</h1>
+          <p class="lead">Espaço para registro, acompanhamento e transparência. Registre sua denúncia com segurança — este protótipo armazena localmente no navegador.</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#denuncias">Ver Denúncias Recentes</a>
+            <a class="btn ghost" href="#fazer-denuncia">Fazer Denúncia</a>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <div class="stats-card">
+            <h3>Resumo rápido</h3>
+            <p><strong id="totalCount">0</strong> denúncias registradas (exemplo)</p>
+            <div class="badges">
+              <span class="badge">Belém</span>
+              <span class="badge danger">Açores</span>
+              <span class="badge">Em análise</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Denúncias Recentes -->
+    <section id="denuncias" class="section container">
+      <div class="section-head">
+        <h2>Denúncias Recentes</h2>
+        <p class="muted">Últimas denúncias registradas no sistema (exemplo). A lista mostra os registros mais recentes primeiro.</p>
+      </div>
+
+      <div id="denunciasList" class="denuncias-list">
+        <!-- Items serão inseridos via JavaScript -->
+      </div>
+    </section>
+
+    <!-- Fazer Denúncia -->
+    <section id="fazer-denuncia" class="section container form-section">
+      <div class="section-head">
+        <h2>Fazer uma denúncia</h2>
+        <p class="muted">Preencha os campos abaixo. O envio é simulado localmente — para envio real, integre com backend seguro.</p>
+      </div>
+
+      <div class="form-grid">
+        <form id="denunciaForm" class="denuncia-form">
+          <label>Tipo de denúncia
+            <select id="tipo" required>
+              <option value="">-- selecione --</option>
+              <option>Corrupção / Irregularidade</option>
+              <option>Descarte irregular</option>
+              <option>Assédio / Abuso</option>
+              <option>Serviço público inoperante</option>
+              <option>Outro</option>
+            </select>
+          </label>
+
+          <label>Local
+            <select id="local" required>
+              <option value="">-- selecione --</option>
+              <option>Belém</option>
+              <option>Açores</option>
+            </select>
+          </label>
+
+          <label>Título da denúncia
+            <input id="titulo" type="text" placeholder="Ex: Descarte irregular de resíduos" required />
+          </label>
+
+          <label>Descrição
+            <textarea id="descricao" rows="5" placeholder="Descreva o ocorrido, locais, datas e pessoas envolvidas."></textarea>
+          </label>
+
+          <label>Deseja enviar em nome
+            <select id="anonimo">
+              <option value="false">Não (informar nome)</option>
+              <option value="true" selected>Sim (anônimo)</option>
+            </select>
+          </label>
+
+          <label>Nome (opcional)
+            <input id="nome" type="text" placeholder="Seu nome (opcional)" />
+          </label>
+
+          <div class="form-actions">
+            <button type="submit" class="btn primary">Registrar denúncia</button>
+            <button type="reset" class="btn ghost">Limpar</button>
+          </div>
+
+          <p id="denunciaFeedback" class="feedback" aria-live="polite"></p>
+        </form>
+
+        <aside class="info-panel">
+          <h3>Dicas para registrar</h3>
+          <ul>
+            <li>Descreva local, data e hora com precisão.</li>
+            <li>Anexe provas quando possível (fotos, vídeos) — recurso não disponível neste protótipo.</li>
+            <li>Denúncias anônimas são aceitas, mas podem dificultar a apuração.</li>
+            <li>Em casos de emergência, contate os serviços de segurança locais.</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Serviços -->
+    <section id="servicos" class="section services">
+      <div class="container">
+        <div class="section-head">
+          <h2>Serviços</h2>
+          <p class="muted">Acesso rápido aos serviços relacionados.</p>
+        </div>
+
+        <div class="services-grid">
+          <div class="service">
+            <div class="service-icon">📄</div>
+            <h4>Registrar denúncia</h4>
+            <p>Formulário rápido para criar um registro.</p>
+            <a class="btn small" href="#fazer-denuncia">Abrir</a>
+          </div>
+
+          <div class="service">
+            <div class="service-icon">🔎</div>
+            <h4>Consultar protocolo</h4>
+            <p>Consulte o andamento do registro (exemplo).</p>
+            <button class="btn small">Consultar</button>
+          </div>
+
+          <div class="service">
+            <div class="service-icon">📢</div>
+            <h4>Comunicados</h4>
+            <p>Lista de comunicados e avisos.</p>
+            <a class="btn small" href="#noticias">Ver</a>
+          </div>
+
+          <div class="service">
+            <div class="service-icon">☎️</div>
+            <h4>Fale conosco</h4>
+            <p>Informações de contato e atendimento.</p>
+            <button class="btn small">Contato</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Notícias (exemplo preenchido) -->
+    <section id="noticias" class="section container">
+      <div class="section-head">
+        <h2>Notícias e Comunicados</h2>
+        <p class="muted">Últimos comunicados e ações relacionadas a denúncias.</p>
+      </div>
+
+      <div class="cards news-grid">
+        <article class="card news-card">
+          <img src="https://via.placeholder.com/820x360?text=Comunicado+1" alt="Comunicado 1">
+          <div class="card-body">
+            <h3>Ação conjunta para fiscalização ambiental</h3>
+            <p class="muted small">Data: 01/10/2025</p>
+            <p>Agentes fiscais intensificaram operações de fiscalização em áreas de descarte irregular.</p>
+            <a class="link" href="#">Leia mais →</a>
+          </div>
+        </article>
+
+        <article class="card news-card">
+          <img src="https://via.placeholder.com/820x360?text=Not%C3%ADcia+2" alt="Notícia 2">
+          <div class="card-body">
+            <h3>Nova central de atendimento em Belém</h3>
+            <p class="muted small">Data: 24/09/2025</p>
+            <p>Inaugurada central de atendimento para registro e orientação de denúncias.</p>
+            <a class="link" href="#">Leia mais →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <p>© <span id="year"></span> denúncias.gov.com.br — Canal de Denúncias (Protótipo)</p>
+        <p class="small muted">Este site é um modelo. Para envio real, integre com um backend seguro e políticas de privacidade.</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="#">Política de Privacidade</a>
+        <a href="#">Mapa do Site</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
